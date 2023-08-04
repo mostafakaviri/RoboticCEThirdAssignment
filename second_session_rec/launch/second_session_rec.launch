@@ -1,0 +1,18 @@
+<launch>
+
+
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_empty_world.launch">
+        <arg name="x_pos" value="0"/>
+        <arg name="y_pos" value="0"/>
+        <arg name="z_pos" value="0.0"/>
+        
+    </include>
+
+    
+    <node pkg="second_session_rec" type="control_node.py" name="control_node" output="screen"></node>
+    <node pkg="second_session_rec" type="monitor.py" name="monitor" output="screen"></node>
+
+    <include file="$(find turtlebot_rviz_launchers)/launch/view_robot.launch"/>
+
+   
+</launch>
